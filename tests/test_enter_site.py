@@ -21,7 +21,8 @@ class TestEnterBurgersSite:
         driver.find_element(*TestLocators.BUTTON_ENTER).click()
         WebDriverWait(driver, 3).until(ec.visibility_of_element_located((
             TestLocators.BUTTON_ORDER)))
-        assert driver.current_url == "https://stellarburgers.nomoreparties.site/"
+        assert driver.current_url == "https://stellarburgers.nomoreparties.site/" and driver.find_element(
+            *TestLocators.BUTTON_ORDER).is_displayed()
 
     def test_enter_from_reg_form(self, driver, rightly):
         driver.find_element(*TestLocators.ENTER_IN_ACCOUNT).click()
