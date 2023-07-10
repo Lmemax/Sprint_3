@@ -5,6 +5,7 @@ from Locators import TestLocators
 
 
 class TestAdapterExitSite:
+
     def test_adapter_personal_area(self, driver, rightly):
         driver.find_element(*TestLocators.PERSONAL_AREA).click()
         driver.find_element(*TestLocators.EMAIL).send_keys(rightly.email)
