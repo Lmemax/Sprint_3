@@ -33,6 +33,7 @@ class TestAdapterExitSite:
         assert driver.find_element(*TestLocators.CHAPTER_ROLLS).is_displayed()
 
     def test_adapter_logo(self, driver, rightly):
+        """Этот тест проверяет переход из личного кабинета на главную страницу по клику на логотип сайта"""
         driver.find_element(*TestLocators.PERSONAL_AREA).click()
         driver.find_element(*TestLocators.EMAIL).send_keys(rightly.email)
         driver.find_element(*TestLocators.PASSWORD).send_keys(rightly.password)
